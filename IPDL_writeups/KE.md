@@ -70,6 +70,8 @@ We specify the `DHKE` protocol by modularly specifying the two parties, which ar
             q := uniform Z_q
             oA := let _ = schedA in g^q
             oB := let _ = schedB in g^q
+            
+Note above that `oA` and `oB` are scheduled independently by the adversary (thus fairness is not guaranteed). This reflects the structure of the real protocol, where there are two message sends. 
 
 ### Simulation proof goal
 
@@ -77,7 +79,7 @@ To show that `DHKE` is secure, we need to show the existence of a simulator `Sim
 
     DHKE[leak1, leak2, ok1, ok2, oA, oB] ~= 
     new schedA, schedB : unit. 
-        Sim[out schedA, schedB : unit, out leak1, leak2 : group, in ok1, ok2 : group] ||
+        Sim[schedA, schedB, leak1, leak2, ok1, ok2] ||
         KEIdeal[schedA, schedB, oA, oB]
 
 
