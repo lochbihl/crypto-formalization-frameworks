@@ -185,7 +185,7 @@ Scheduler-based examples typically follow the ideal-real world paradigm and defi
 #### Diffie-Hellman key exchange
 
 * [CryptHOL](https://www.isa-afp.org/browser_info/current/AFP/Constructive_Cryptography_CM/Diffie_Hellman_CC.html)
-
+* [IPDL](IPDL_writeups/KE.md)
 
 ### Composition examples
 
