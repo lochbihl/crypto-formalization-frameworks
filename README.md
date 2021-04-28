@@ -100,6 +100,41 @@ Security proofs are composed with steps from the following categories:
 
 ### IPDL
 
+IPDL shallowly embeds a process calculus into Coq with the following syntax:
+```
+r ::= 
+   | Read c // where c is a channel
+   | Samp D // where D is a probability distribution
+   | x <- r in r // monadic bind
+   | return e
+   
+P ::=
+   | c ::= r // channel c is bound to reaction r
+   | P || P // parallel composition
+   | new c : \tau in P // private channel creation
+   | 0
+```
+
+Above, `r` stands for a _reaction_, which defines the behavior of channels. 
+Channels are write-once, and only one reaction can be bound to a channel.
+(Repeated queries / state access are encoded using vectors of channels of some parameterized size.)
+Private channels capture state encapsulation. Interaction between processes `P` and the outside envrionment/adversary is
+done by using free channels (i.e., channels not created by `new`).
+The point of IPDL is that channels have very simple behaviors (governed by reactions). In this way, IPDL can also 
+be thought of as **interactive probabilistic circuits**. While the syntax of IPDL does not allow control flow, public, static control flow can be encoded 
+through metaprogramming in Coq.
+
+## Reasoning in IPDL
+
+Because the behaviors of channels in IPDL are simple and captured by the syntax, IPDL admits an equational reasoning framework. The main judgement 
+in IPDL is `P ~=_delta Q` (`P` is `delta` distance away from `Q`). (The Coq framework does not yet reason about the `delta`.) 
+
+There are rules for:
+* basic properties of `||` and `new`, including congruence rules for `~=` wrt `||` and `new`;
+* soundly inlining channels into other channels; and
+* reasoning equationally about probability distributions inside of reactions.
+
+
 **Resources:**
 * [Source code](https://github.com/ipdl/ipdl)
 * [Paper](https://eprint.iacr.org/2021/147)
