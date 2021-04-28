@@ -124,7 +124,7 @@ The point of IPDL is that channels have very simple behaviors (governed by react
 be thought of as **interactive probabilistic circuits**. While the syntax of IPDL does not allow control flow, public, static control flow can be encoded 
 through metaprogramming in Coq.
 
-## Reasoning in IPDL
+#### Reasoning in IPDL
 
 Because the behaviors of channels in IPDL are simple and captured by the syntax, IPDL admits an equational reasoning framework. The main judgement 
 in IPDL is `P ~=_delta Q` (`P` is `delta` distance away from `Q`). (The Coq framework does not yet reason about the `delta`.) 
