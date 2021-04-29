@@ -62,6 +62,7 @@ We specify the `DHKE` protocol by modularly specifying the two parties, which ar
             FAuth[send1, leak1, ok1, recv1] // FAuth A -> B
             FAuth[send2, leak2, ok2, recv2] // FAuth B -> A
 
+This corresponds to a corruption scenario in which Alice and Bob are both honest (so the adversary only has control over viewing / scheduling in-flight messages). Malicious corruption in IPDL like other systems is static, and is captured by modifying the program so that the adversary has control over the party's channels.
 
 ### DHKE Ideal
 
