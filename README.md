@@ -142,6 +142,9 @@ There are rules for:
 
 ### SSProve
 
+   Formalization and precision of State Separating Proofs. Connecting the high level techniques with a concrete probabilistic logic.
+   Compared to FCF, infinitary distributions, but terminating computations.
+
 **Resources:**
 * [Source code](https://github.com/SSProve)
 * [Paper](https://eprint.iacr.org/2021/397)
