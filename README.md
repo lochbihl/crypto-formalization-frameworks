@@ -153,8 +153,8 @@ Related to the above are the following works:
 
 * [EasyUC](https://github.com/easyuc/EasyUC)
   formalizes parts of the UC framework in EasyCrypt.
-
-
+  Uses the pull model.
+* [Complexity in Easycrypt](https://eprint.iacr.org/2021/156) contains another formalization of UC.
 
 
 ## Formalization examples
@@ -178,9 +178,13 @@ Scheduler-based examples typically follow the ideal-real world paradigm and defi
   * [with a pre-shared key](https://www.isa-afp.org/browser_info/current/AFP/Constructive_Cryptography/One_Time_Pad.html)
   * [composable version](https://www.isa-afp.org/browser_info/current/AFP/Constructive_Cryptography_CM/One_Time_Pad.html)
 
+* SSProve
+   * [OTP](https://github.com/SSProve/ssprove/blob/main/theories/Crypt/examples/OTP.v)
+
 
 #### KEM-DEM
-
+* SSProve
+   * [KEM-DEM](https://github.com/SSProve/ssprove/blob/main/theories/Crypt/examples/KEMDEM.v)
 
 #### Diffie-Hellman key exchange
 
