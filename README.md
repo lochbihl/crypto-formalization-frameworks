@@ -156,9 +156,13 @@ Related to the above are the following works:
 
 * [EasyUC](https://github.com/easyuc/EasyUC)
   formalizes parts of the UC framework in EasyCrypt.
-  Uses the pull model.
+  Uses the push model: information is pushed to the Advarsary.
 * [Complexity in Easycrypt](https://eprint.iacr.org/2021/156) contains another formalization of UC.
-
+  Like CC in CryptHOL, uses the pull model: Advarsary asks for information.
+ 
+### IO-automata
+Both IPDL and CryptHOL are loosely based on IO-automata. See UC based on [IO-automata](https://dspace.mit.edu/handle/1721.1/33217).
+The wiring is more restricted in CryptHOL.
 
 ## Formalization examples
 
