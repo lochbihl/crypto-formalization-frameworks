@@ -20,10 +20,11 @@ In IPDL, there is no distinction yet between external channels meant for the env
     ~=
 
     DDH1[out o : group * group * group] :=
-        new x, y : Z_q in
+        new x, y, z : Z_q in
             x := uniform Z_q 
             y := uniform Z_q
-            o := (g^x, g^y, g^(x*y))
+            z := uniform Z_q
+            o := (g^x, g^y, g^z)
 
 Notes on above: there is only one form of composition -- the `||` operator -- thus, there is no particular order between the channels `x` and `y`. If a value of a channel appears in a reaction,
 then I am doing an implicit read; e.g., the reaction `(g^x, g^y, g^(x * y))` is shorthand for
